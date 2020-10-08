@@ -161,7 +161,7 @@ async function addTrainingTab(app, html, data) {
 
     // Create the tab content
     let sheet = html.find('.sheet-body');
-    let trainingTabHtml = $(await renderTemplate('modules/5e-training/templates/training-section.html', data));
+    let trainingTabHtml = $(await renderTemplate('modules/5e-training/templates/training-tab.html', data));
     sheet.append(trainingTabHtml);
 
     // Get a list of tools from our actor
@@ -215,7 +215,7 @@ async function addTrainingTab(app, html, data) {
         progressionStyle: 'ability'
       };
 
-      let dialogContent = await renderTemplate('modules/5e-training/templates/add-training-dialog.html', {training: newActivity});
+      let dialogContent = await renderTemplate('modules/5e-training/templates/create-activity-dialog.html', {training: newActivity});
 
       // If there is no flag, create an empty array to use as a placeholder
       if (!trainingItems) {
@@ -271,7 +271,7 @@ async function addTrainingTab(app, html, data) {
       let trainingIdx = parseInt(fieldId.replace('crash-edit-',''));
       let activity = trainingItems[trainingIdx];
       let edit = false;
-      let dialogContent = await renderTemplate('modules/5e-training/templates/training-details-dialog.html', {training: activity, options: DROPDOWN_OPTIONS});
+      let dialogContent = await renderTemplate('modules/5e-training/templates/edit-activity-dialog.html', {training: activity, options: DROPDOWN_OPTIONS});
 
       // Create dialog
       new Dialog({
@@ -321,7 +321,7 @@ async function addTrainingTab(app, html, data) {
       let trainingIdx = parseInt(fieldId.replace('crash-delete-',''));
       let activity = trainingItems[trainingIdx];
       let del = false;
-      let dialogContent = await renderTemplate('modules/5e-training/templates/delete-training-dialog.html');
+      let dialogContent = await renderTemplate('modules/5e-training/templates/delete-activity-dialog.html');
 
       // Create dialog
       new Dialog({

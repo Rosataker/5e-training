@@ -3,7 +3,7 @@ export default class AuditLog extends FormApplication {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       id: "downtime-audit-log-form",
-      template: "modules/5e-training/templates/audit-dialog.html",
+      template: "modules/5e-training/templates/audit-log.html",
       title: game.i18n.localize("C5ETRAINING.AuditLog"),
       width: 900,
       resizable: true,

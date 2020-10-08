@@ -1,13 +1,13 @@
 {
 	"name": "5e-training",
-	"title": "Crash's 5e Downtime Tracking",
-	"description": "Adds a section to the character sheet to keep track of downtime activity progression. Track proficiency training, spell scribing, and anything else you can think of.",
-	"version": "0.4.7",
+	"title": "Crash's 5e Tracking & Training (Previously Crash's 5e Downtime Tracking)",
+	"description": "Adds a tab to the character sheet to help you keep track of faction rep, downtime activities, quest progress, proficiency training, spell scribing, and anything else you can think of.",
+	"version": "0.5.0",
 	"author": "CRASH1115#2944",
 	"minimumCoreVersion": "0.6.6",
 	"compatibleCoreVersion": "0.7.3",
 	"systems": ["dnd5e"],
-	"esmodules": ["training.js"],
+	"esmodules": ["scripts/main.js"],
 	"styles": ["styles/training.css"],
 	"languages": [
 		{
