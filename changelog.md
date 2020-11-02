@@ -1,5 +1,15 @@
 # Change Log
 
+## Version 0.5.0 (mostly done)
+- Overhauled the whole dang diddly thang!
+- Accessible API ( `CrashTNT.createActivity`, `CrashTNT.deleteActivity`, `CrashTNT.updateActivity` )
+
+## Version 0.5.0 (not done)
+- Added the ability to add custom fields to downtimes that display along with the description when things are expanded.
+- Activities now sort A-Z
+- Activities can now be sorted into categories! These also get sorted A-Z.
+
+
 ## Version 0.4.7
 - Added the `CrashTrainingTabReady` hook, which fires when the downtime tab is ready. Example usage:
 ```js

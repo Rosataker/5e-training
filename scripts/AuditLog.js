@@ -13,14 +13,14 @@ export default class AuditLog extends FormApplication {
 
   async getData(options = {}) {
     let originalData = super.getData();
-    let activities = originalData.object.flags["5e-training"].trainingItems;
+    let activities = originalData.object.flags["5e-training"].testingItems;
     let changes = [];
 
-// Loop through each activity. If it's got no changes array, move on to the next one.
-//  If it DOES have a change array, loop through each entry and set up the info we need
-//  for display in the application. Most of it's one-to one, but we need to pull the activity name
-//  from the activity itself, and we do some math for the change. Once that's done,
-//   push the change into the array.
+    // Loop through each activity. If it's got no changes array, move on to the next one.
+    //  If it DOES have a change array, loop through each entry and set up the info we need
+    //  for display in the application. Most of it's one-to one, but we need to pull the activity name
+    //  from the activity itself, and we do some math for the change. Once that's done,
+    //   push the change into the array.
     for (var a=0; a < activities.length; a++){
       if(!activities[a].changes){ continue; }
       for(var c=0; c < activities[a].changes.length; c++){
@@ -57,7 +57,7 @@ export default class AuditLog extends FormApplication {
 
     let actorId = formData.actorId;
     let actor = game.actors.get(actorId);
-    let activities = await actor.getFlag("5e-training", "trainingItems");
+    let activities = await actor.getFlag("5e-training", "testingItems");
 
     // Same loop as before. Cycle through each activity, if it's got no change array,
     //  move on to the next one. If it does, cycle through it and see if the timestamp
@@ -75,7 +75,7 @@ export default class AuditLog extends FormApplication {
     }
 
     // Update actor and flags
-    await actor.setFlag("5e-training", "trainingItems", activities);
+    await actor.setFlag("5e-training", "testingItems", activities);
 
   }
 

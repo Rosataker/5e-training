@@ -4,15 +4,15 @@
     <input type="text" name="nameInput" id="nameInput" value="{{training.name}}">
   </div>
 
-  {{#if (eq training.progressionStyle "ability")}}
+  {{#if (eq training.type "check")}}
     {{> "modules/5e-training/templates/partials/ability.html" training=training}}
   {{/if}}
 
-  {{#if (eq training.progressionStyle "simple")}}
+  {{#if (eq training.type "simple")}}
     {{> "modules/5e-training/templates/partials/simple.html" training=training}}
   {{/if}}
 
-  {{#if (eq training.progressionStyle "dc")}}
+  {{#if (eq training.type "dc")}}
     {{> "modules/5e-training/templates/partials/dc.html" training=training}}
   {{/if}}
 

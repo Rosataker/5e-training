@@ -12,18 +12,18 @@
       </div>
     </li>
     <ol class="item-list">
-      {{#each actor.flags.5e-training.trainingItems as |training tid| }}
+      {{#each actor.flags.5e-training.testingItems as |training| }}
         <li class="item flexrow">
           <div class="item-name flexrow">
-            <div class="item-image rollable crash-training-roll" id="crash-roll-{{tid}}" title="{{ localize 'C5ETRAINING.AdvanceActivityProgress' }}" style="background-image: url(icons/svg/d20.svg);"></div>
-            <h4 class="rollable crash-training-toggle-desc" id="crash-toggle-desc-{{tid}}" title="{{ localize 'C5ETRAINING.ToggleInfo' }}">{{training.name}}</h4>
+            <div class="item-image rollable crash-training-roll" id="crash-roll-{{training.id}}" title="{{ localize 'C5ETRAINING.AdvanceActivityProgress' }}" style="background-image: url(icons/svg/d20.svg);"></div>
+            <h4 class="rollable crash-training-toggle-desc" id="crash-toggle-desc-{{training.id}}" title="{{ localize 'C5ETRAINING.ToggleInfo' }}">{{training.name}}</h4>
           </div>
           <div class="item-detail type">
-            {{progressionStyle training ../actor}}
+            {{progressionStyle ../actor training }}
           </div>
           <div class="item-detail override">
-            <input type="text" class="item-control crash-training-override" id="crash-override-{{tid}}" title="{{ localize 'C5ETRAINING.AdjustProgressValue' }}" value="{{training.progress}}"/>
-            <span> / {{training.completionAt}}</span>
+            <input type="text" class="item-control crash-training-override" id="crash-override-{{training.id}}" title="{{ localize 'C5ETRAINING.AdjustProgressValue' }}" value="{{training.progress}}"/>
+            <span> / {{training.completionTarget}}</span>
           </div>
           <div class="item-detail flexrow bar">
             <div class="progress-bar">
@@ -33,8 +33,8 @@
             </div>
           </div>
           <div class="item-controls">
-            <a class="item-control crash-training-edit" id="crash-edit-{{tid}}" title="{{ localize 'C5ETRAINING.EditDowntimeActivity' }}"><i class="fas fa-edit"></i></a>
-            <a class="item-control crash-training-delete" id="crash-delete-{{tid}}" title="{{ localize 'C5ETRAINING.DeleteDowntimeActivity' }}"><i class="fas fa-trash"></i></a>
+            <a class="item-control crash-training-edit" id="crash-edit-{{training.id}}" title="{{ localize 'C5ETRAINING.EditDowntimeActivity' }}"><i class="fas fa-edit"></i></a>
+            <a class="item-control crash-training-delete" id="crash-delete-{{training.id}}" title="{{ localize 'C5ETRAINING.DeleteDowntimeActivity' }}"><i class="fas fa-trash"></i></a>
           </div>
         </li>
       {{/each}}

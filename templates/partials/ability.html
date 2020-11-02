@@ -1,13 +1,18 @@
 <div class="field">
   <label for="ability">{{ localize 'C5ETRAINING.SelectAnAbility' }}:</label>
-  <select name="abilityInput" id="abilityInput"" {{#if (eq training.progressionStyle "simple")}}style="visibility:hidden;"{{/if}}>
+  <select name="abilityInput" id="abilityInput"" {{#if (eq training.type "simple")}}style="visibility:hidden;"{{/if}}>
     {{#each options as |option oid| }}
-      <option value="{{option.value}}" {{#if (eq ../training.ability option.value)}} selected {{/if}}>{{option.label}}</option>
+      <option value='{"value": "{{option.value}}","type": "{{option.type}}" }' 
+              {{#if (eq ../training.abilityId option.value)}} selected {{/if}}
+              {{#if (eq ../training.skillId option.value)}} selected {{/if}}
+              {{#if (eq ../training.toolId option.value)}} selected {{/if}}>
+        {{option.label}}
+      </option>
     {{/each}}
   </select>
 </div>
 
 <div class="field">
   <label for="completionAt">{{ localize 'C5ETRAINING.CompletionTarget' }}:</label>
-  <input type="text" name="completionAtInput" id="completionAtInput" value="{{training.completionAt}}">
+  <input type="text" name="completionAtInput" id="completionAtInput" value="{{training.completionTarget}}">
 </div>
