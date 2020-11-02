@@ -37,7 +37,7 @@ Hooks.on(`renderActorSheet`, (app, html, data) => {
 
 // Module Hooks
 Hooks.on(`CrashTrainingTabReady`, (app, html, data) => {
-  console.log("Crash's 5e Downtime Tracking | Downtime tab ready!");
+  console.log("Crash's 5e Tracking & Training | Downtime tab ready!");
 });
 
 // Adds the training tab to the sheet and starts up the event listeners
@@ -75,7 +75,6 @@ async function addTrainingTab(app, html, data) {
     // ADD NEW DOWNTIME ACTIVITY
     html.find('.crash-training-add').click(async (event) => {
       event.preventDefault();
-      console.log("Crash's 5e Downtime Tracking | Create Downtime Activity excuted!");
       await CrashTrackingAndTraining.addItem(actor.id);
     });
 
@@ -99,7 +98,7 @@ async function addTrainingTab(app, html, data) {
       let field = event.currentTarget;
       let itemId = event.currentTarget.id.replace('crash-override-','');
       if(isNaN(field.value)){
-        ui.notifications.warn("Crash's 5e Downtime Tracking: " + game.i18n.localize("C5ETRAINING.InvalidNumberWarning"));
+        ui.notifications.warn("Crash's 5e Tracking & Training: " + game.i18n.localize("C5ETRAINING.InvalidNumberWarning"));
       } else {
         CrashTrackingAndTraining.updateItemProgressFromSheet(actor.id, itemId, field.value);
       }

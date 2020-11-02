@@ -14,7 +14,7 @@
 - Added the `CrashTrainingTabReady` hook, which fires when the downtime tab is ready. Example usage:
 ```js
 Hooks.on(`CrashTrainingTabReady`, (app, html, data) => {
-  console.log("Crash's 5e Downtime Tracking | Downtime tab ready!");
+  console.log("Crash's 5e Tracking & Training | Downtime tab ready!");
 });
 ```
 

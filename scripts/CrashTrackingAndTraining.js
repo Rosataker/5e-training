@@ -204,7 +204,7 @@ export default class CrashTrackingAndTraining {
           await CrashTrackingAndTraining.checkItemCompletion(actorId, itemId);
         });
       } else {
-        ui.notifications.warn("Crash's 5e Downtime Tracking: " + game.i18n.localize("C5ETRAINING.ToolNotFoundWarning"));
+        ui.notifications.warn("Crash's 5e Tracking & Training: " + game.i18n.localize("C5ETRAINING.ToolNotFoundWarning"));
       }
     }
 
@@ -288,7 +288,7 @@ export default class CrashTrackingAndTraining {
       }
 
       if (sendIt){
-        console.log("Crash's 5e Downtime Tracking | " + actor.name + " " + game.i18n.localize("C5ETRAINING.CompletedADowntimeActivity"));
+        console.log("Crash's 5e Tracking & Training | " + actor.name + " " + game.i18n.localize("C5ETRAINING.CompletedADowntimeActivity"));
         let chatHtml = await renderTemplate('modules/5e-training/templates/completion-message.html', {actor:actor, activity:thisItem});
         ChatMessage.create({content: chatHtml});
       }
