@@ -182,11 +182,32 @@ export function crashTNT(){
   function updateActivity(actorId, itemId, changes){
     CrashTrackingAndTraining.updateItem(actorId, itemId, changes);
   }
+  function getActivitiesForActor(actorId){
+    let actor = game.actors.get(actorId);
+    if(actor){
+      let allItems = actor.getFlag("5e-training", "testingItems");
+      return allItems;
+    } else {
+      ui.notifications.warn("Crash's 5e Tracking & Training: " + game.i18n.localize("C5ETRAINING.ActorNotFoundWarning"));
+    }
+  }
+  function getActivitiesForActorByName(actorName){
+    let actor = game.actors.getName(actorName);
+    if(actor){
+      let allItems = actor.getFlag("5e-training", "testingItems");
+      return allItems;
+    } else {
+      ui.notifications.warn("Crash's 5e Tracking & Training: " + game.i18n.localize("C5ETRAINING.ActorNotFoundWarning"));
+    }
+
+  }
 
   return {
     createActivity: createActivity,
     deleteActivity: deleteActivity,
-    updateActivity: updateActivity
+    updateActivity: updateActivity,
+    getActivitiesForActor: getActivitiesForActor,
+    getActivitiesForActorByName: getActivitiesForActorByName
   };
 }
 

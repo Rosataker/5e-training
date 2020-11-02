@@ -2,7 +2,7 @@
 
 ## Version 0.5.0 (mostly done)
 - Overhauled the whole dang diddly thang!
-- Accessible API ( `CrashTNT.createActivity`, `CrashTNT.deleteActivity`, `CrashTNT.updateActivity` )
+- Accessible API ( `CrashTNT.createActivity`, `CrashTNT.deleteActivity`, `CrashTNT.updateActivity`,  `CrashTNT.getActivitiesForActor`, `CrashTNT.getActivitiesForActorByName`)
 
 ## Version 0.5.0 (not done)
 - Added the ability to add custom fields to downtimes that display along with the description when things are expanded.
