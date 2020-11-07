@@ -210,7 +210,7 @@ export default class CrashTrackingAndTraining {
 
     // Progression Type: Simple
     else if (thisItem.type === 'simple'){
-      let activityName = game.i18n.localize("C5ETRAINING.Attempt") + " (" + game.i18n.localize("C5ETRAINING.Simple") + ")";
+      let attemptName = game.i18n.localize("C5ETRAINING.Attempt") + " (" + game.i18n.localize("C5ETRAINING.Simple") + ")";
       updates.progress = CrashTrackingAndTraining.calculateNewProgressValue(actorId, itemId, 1, false, false);
       let logItem = new LogItem(attemptName, "progress", thisItem.progress, updates.progress);
       updates.changes.push(logItem);
