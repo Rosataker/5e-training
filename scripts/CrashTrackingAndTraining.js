@@ -267,7 +267,7 @@ export default class CrashTrackingAndTraining {
 
     if(thisItem.progress >= thisItem.completionTarget){
       let alertFor = game.settings.get("5e-training", "announceCompletionFor");
-      let isPc = actor.isPC;
+      let isPc = actor.hasPlayerOwner;
       let sendIt;
 
       switch(alertFor){
