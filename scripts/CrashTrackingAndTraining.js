@@ -11,6 +11,7 @@ export default class CrashTrackingAndTraining {
     let allItems = actor.getFlag("5e-training", "testingItems");
     if(!allItems){ allItems = []; }
     let newItem = new Activity;
+    // TODO: Really should just make this a FormApplication rather than doing dialogs. Make creating and editing activities easier.
     let dialogContent = await renderTemplate('modules/5e-training/templates/create-activity-dialog.html', {training: newItem});
     let add = false;
     // Create dialog
@@ -295,6 +296,7 @@ export default class CrashTrackingAndTraining {
     }
   }
 
+  //TODO: Might want to split this into calculate progress and set progress.
   static calculateNewProgressValue(actorId, itemId, change, absolute = false, ignoreDc = false){
     let actor = game.actors.get(actorId);
     let allItems = actor.getFlag("5e-training", "testingItems");
